@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmium - Jogo da Memória</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-deepspace">
+
+    <!-- TELA DE MENU INICIAL -->
+    <div id="menu-screen" class="menu-container">
+        <div class="menu-box">
+            <h1>🌌 COSMIUM 🌌</h1>
+            <p>Escolha sua órbita e configure os parâmetros da missão:</p>
+            
+            <div class="settings-group">
+                <label for="theme-select">Paleta do Ambiente:</label>
+                <select id="theme-select" class="cosmic-select">
+                    <option value="theme-deepspace" selected>Espaço Profundo</option>
+                    <option value="theme-nebula">Nebulosa Rosa</option>
+                    <option value="theme-atmosphere">Atmosfera</option>
+                    <option value="theme-corona">Corona Solar</option>
+                </select>
+            </div>
+
+            <div class="settings-group">
+                <label for="diff-select">Nível de Dificuldade:</label>
+                <select id="diff-select" class="cosmic-select">
+                    <option value="normal" selected>Normal (Padrão)</option>
+                    <option value="hard">Difícil</option>
+                    <option value="veryhard">Super Difícil</option>
+                    <option value="extra">Extra</option>
+                </select>
+            </div>
+
+            <div class="settings-group">
+                <label for="timer-select">Temporizador de Missão:</label>
+                <select id="timer-select" class="cosmic-select">
+                    <option value="off" selected>Desativado</option>
+                    <option value="slow">Lento</option>
+                    <option value="normal">Normal</option>
+                    <option value="fast">Rápido ⚡</option>
+                </select>
+            </div>
+
+            <button id="start-btn" class="btn-action">Iniciar Missão</button>
+        </div>
+    </div>
+
+    <!-- TELA DE JOGO -->
+    <main id="game-screen" class="game-container hidden">
+        <div id="game-hud" class="game-hud hidden">
+            <span id="timer-display">Tempo: --:--</span>
+        </div>
+        <div id="memory-board" class="memory-board"></div>
+    </main>
+
+    <!-- TELA DE VITÓRIA -->
+    <div id="victory-screen" class="victory-container hidden">
+        <div class="victory-content">
+            <h2>🎉 MISSÃO BEM SUCEDIDA</h2>
+            <p>Você encontrou todos os pares e estabilizou o sistema cósmico com sucesso!</p>
+            <div class="victory-buttons">
+                <button id="victory-retry-btn" class="btn-action">Jogar Novamente</button>
+                <button id="victory-menu-btn" class="theme-btn">Voltar ao Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DE GAME OVER -->
+    <div id="gameover-screen" class="gameover-container hidden">
+        <div class="gameover-content">
+            <h2>ANULAÇÃO GRAVITACIONAL</h2>
+            <p>O tempo se esgotou e o horizonte de eventos consumiu o sistema!</p>
+            <div class="gameover-buttons">
+                <button id="retry-btn" class="btn-action">Tentar de Novo</button>
+                <button id="menu-btn" class="theme-btn">Voltar ao Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asset único do buraco negro para a transição fluida -->
+    <div id="board-black-hole" class="board-black-hole hidden"></div>
+
+    <div id="bg-effects-layer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
